@@ -103,7 +103,7 @@ Singularity is formally defined as having determinant equal to 0. The determinan
 The formula to calculate the determinant of a 2x2 matrix is:
 
 $$
-det (\begin{bmatrix} a & b \\ c & d \end{bmatrix}\ ) = ad - bc
+\det\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\right) = ad - bc
 $$
 
 Which has the geometric meaning of "the area of the parallelogram formed by the column vectors of the matrix".
