@@ -75,10 +75,68 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
 
 - `np.array([1,2]) * 1.6`
 
-#### Slicing is also available:
+#### slicing is also available:
 
 - The syntax is `array[start:end:step]`
 - defaults are `[0, endOfArray, 1]`
 - it works multidimensionally. For example, this uses slice notation to get every row, and then pulls the second column:
-  - `two_dim[:,1]`
-    (`:` takes all in the first dimension (whole row), `1`take that index in the column)
+  - `two_dim[:,1]` takes the column of index 1 (the second).
+  - a good way to think about it is that the dimensions you don't want to touch get just `:` (which means 'taking the whole dimension)
+
+#### stacking and splitting
+
+- arrays can be stacked vertically or horizontally:
+
+  - vertical stacking:
+
+    ```
+    np.vstack((
+    [[1,1], [2,2]],
+    [[3,3], [4,4]]
+    ))
+    ```
+
+    => `[[1 1] [2 2] [3 3] [4 4]]`
+
+  - horizontal stacking:
+
+    ```
+    np.hstack((
+    [[1,1], [2,2]],
+    [[3,3], [4,4]]
+    ))
+    ```
+
+    => `[[1 1 3 3] [2 2 4 4]]`
+
+- splitting is the opposite operation - dividing arrays
+
+  - dividing horizontally in 2 parts of equal size:
+
+    `np.hsplit([[1 1 3 3] [2 2 4 4]], 2)` => `[array([[1, 1], [2, 2]]), array([[3, 3], [4, 4]])]`
+
+  - is an exact division is not possible a valueError would be raised.
+  - splitting at an index is also possible, at one or several indexes:
+
+    ```
+    array = np.array([
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
+        [13, 14, 15, 16]
+        ])
+
+        split_array = np.hsplit(array, [1, 3])
+    ```
+
+    =>
+
+    ```
+    [
+        array([[ 1], [ 5], [ 9], [13]]),
+        array([[ 2,  3], [ 6,  7], [10, 11], [14, 15]]),
+        array([[ 4], [ 8], [12], [16]]
+    )]`
+    ```
+
+  - the previous technique is equivalent to slicing, but more convenient when splitting on several place.
