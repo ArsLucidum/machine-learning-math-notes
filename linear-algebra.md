@@ -149,3 +149,27 @@ In geometric terms, the inverse of a matrix represents a transformation that rev
 will undo this transformation.
 
 The lack of an inverse implies that the operation is destructive - by definiton, there is no transformation that undoes the change. Singular matrices don't have an inverse because its transformation projects a higher dimension into a lower one - there is not enough information in the result to go back to the original state, since there are many original states that could have lead to that result.
+
+## Solution space
+
+The solution space of a system of linear equations is the set of all possible solutions that satisfy all equations simultaneously. In other words, it is the set of all vectors $x$ that satisfy $Ax = b$.
+
+The dimension of the solution space (also called _nullity_) of A is equal to $n - rank(A)$, where n is the number of columns of A.
+
+## Row echelon form
+
+The row echelon form of a matrix s a simplified version of the original matrix that satisfies three conditions:
+
+- each first non-zero entry (_leading entry_ or _pivot_) is 1, and its to the right of the previous leading entry.
+- the rows made fully of zeros are at the bottom.
+- all entries below a leading entry are zeros.
+
+The rank of a matrix is the number of non-zero rows in its row echelon form.
+
+## Reduced row echelon form
+
+the reduced row echelon form is a stricter variation of the row echelon form that satisfies an extra condition:
+
+- each leading 1 is the only non-zero entry in its column.
+
+unlike the row echelon form, the reduced version is unique per matrix.

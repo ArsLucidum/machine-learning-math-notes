@@ -140,3 +140,26 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
     ```
 
   - the previous technique is equivalent to slicing, but more convenient when splitting on several place.
+
+#### solving systems of equations:
+
+- Given a matrix of coefficients A, and a vector of the free (right side) coefficients b, `np.linalg.solve(A, b)` would return a solution to the system return a solution to the system.
+- the function will throw LinAlgError if a is singular or not square.
+
+#### determinant
+
+- `np.linalg.det(A)` will return the determinant of a (square) matrix.
+
+### plotting lines: matplotlib
+
+- previous import of the package is required:
+  `import matplotlib.pyplot as plt `
+- each linear equation can be represented by a line in a plane. Given a system:
+
+  - we stack the coefficient matrix and vector:
+
+    `A_system = np.hstack((A, b.reshape((2, 1))))`
+
+  - then we plot:
+
+    `plot_lines(A_system)`
