@@ -163,3 +163,23 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
   - then we plot:
 
     `plot_lines(A_system)`
+
+### vectors
+
+#### scalar multiplication
+
+- simply multiply the vector by a number: `4*v`
+
+#### sum of vectors
+
+- regular operator works: `v + w`
+
+#### norm of a vector
+
+`np.lingalg.norm(v)`
+
+#### dot product
+
+- `np.dot(x,y)` works with numpy arrays and regular lists
+- the equivalent form `x @ y` works only with numpy arrays
+- both versions are far more performant than a regular loop.

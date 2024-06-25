@@ -173,3 +173,45 @@ the reduced row echelon form is a stricter variation of the row echelon form tha
 - each leading 1 is the only non-zero entry in its column.
 
 unlike the row echelon form, the reduced version is unique per matrix.
+
+## Vector recap
+
+### Norms
+
+- The $L1$ norm, also known as taxicab distance, is the sum of the absolute values of all components.
+
+- the $L2$ norm, or euclidean distance, is the square root of all suared components of the vector.
+
+### Operations
+
+- sum/difference of vectros are simply the sum/difference of its components (only defined for vectors of equal size).
+
+- multiplication of vectors by a scalar also work by multiplying by coordinate
+
+- the traspose of a vector (or matrix) turns rows into columns.
+
+### Dot product
+
+- the dot product is the sum of all coordinates' products (the l2-norm is the square root of the vector with itself).
+
+- it is related to the angle between the vectors: ortogonal vectors have dot product equal to 0.
+
+### Matrix multiplication by a vector
+
+We can think of matrix multiplication by a vector as a dot product of each of the rows by the vector, returning a column vector with the result of each dot product. The number of columns in the matrix must therefore equal the length of the vector.
+
+#### Linear transformations
+
+A linear transformation is a rule that takes each vector in one space and transforms it to a vector in another space. Linear transformations can be represented by matrices.
+
+We can represent a transformation as a matrix by applying the transformation to the standard basis vectors. The standard basis vectors are those that have one component equal to 1 and all other components equal to 0 - They are trivially linearly independent, and they span the space.
+
+Linear transformations can be visually represented as scaling, shearing, rotation, etc. of the original vector space.
+
+#### Matrix multiplication
+
+matrices can be multiplied, and its result can be thought of as a composition of the linear transformations they represent.
+
+Conditions for multiplication are that the number of columns of the first matrix must match the number of rows of the second, and the resulting matrix has as many rows as the first matrix and as many columns as the second.
+
+The calculation itself can be thought of as a combination of dot products for the rows and colums of the matrices.
