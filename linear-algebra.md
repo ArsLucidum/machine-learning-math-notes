@@ -180,7 +180,10 @@ unlike the row echelon form, the reduced version is unique per matrix.
 
 - The $L1$ norm, also known as taxicab distance, is the sum of the absolute values of all components.
 
-- the $L2$ norm, or euclidean distance, is the square root of all suared components of the vector.
+- the $L2$ norm, or euclidean distance, is equal to:
+  $$
+   d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2 + \cdots + (w_2 - w_1)^2}
+  $$
 
 ### Operations
 
@@ -193,6 +196,10 @@ unlike the row echelon form, the reduced version is unique per matrix.
 ### Dot product
 
 - the dot product is the sum of all coordinates' products (the l2-norm is the square root of the vector with itself).
+
+  $$
+   \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i
+  $$
 
 - it is related to the angle between the vectors: ortogonal vectors have dot product equal to 0.
 
@@ -212,6 +219,28 @@ Linear transformations can be visually represented as scaling, shearing, rotatio
 
 matrices can be multiplied, and its result can be thought of as a composition of the linear transformations they represent.
 
-Conditions for multiplication are that the number of columns of the first matrix must match the number of rows of the second, and the resulting matrix has as many rows as the first matrix and as many columns as the second.
+Conditions for multiplication are that the number of columns of the first matrix must match the number of rows of the second, and the resulting matrix has as many rows as the first matrix and as many columns as the second If $A$ is an $m \times n$ matrix and $B$ is an $n \times p$ matrix, their product $C$ will be an $m \times p$ matrix..
 
-The calculation itself can be thought of as a combination of dot products for the rows and colums of the matrices.
+The calculation itself can be thought of as a combination of dot products for the rows and colums of the matrices. For example, if $A$ and $B$ are both $2 \times 2$ matrices:
+
+$$
+ A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}
+
+ B = \begin{pmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{pmatrix}
+$$
+
+Then their product $C = A \times B$ is:
+
+$$
+ C = \begin{pmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{pmatrix}
+$$
+
+Where:
+
+$$ c_{11} = a_{11} b_{11} + a_{12} b_{21} $$
+
+$$ c_{12} = a_{11} b_{12} + a_{12} b_{22} $$
+
+$$ c_{21} = a_{21} b_{11} + a_{22} b_{21} $$
+
+$$ c_{22} = a_{21} b_{12} + a_{22} b_{22} $$
