@@ -182,4 +182,11 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
 
 - `np.dot(x,y)` works with numpy arrays and regular lists
 - the equivalent form `x @ y` works only with numpy arrays
-- both versions are far more performant than a regular loop.
+- both versions are far more performant than a regular loop
+
+#### matrix multiplication
+
+- `np.matmul(A, B)` will multiply the two matrices
+- `A @ B` also works as an alternative nomenclature
+- for dimensions that aren't compatible with multiplication, a ValueError will be raised
+- an exception is vector multiplication - when done with `.matmul`, it will work (meaning that the second vector will be automatically transposed)

@@ -115,6 +115,29 @@ This means that, geometrically, the determinant quantifies how the matrix transf
 
 A determinant of 0 then is geometrically interpreted as a transformation that maps higher dimensional objects into a lower-dimensional space - a 3d space into a plame, for example - which fits with the concept of singularity.
 
+An interesting property of the determinant is that the  product of the determinants of two matrices is equal to the determinant of the matrix produced by multiplying the matrices themselves. This is intuitive when thinking of matrices as linear transformations, and of the determinant as the area of the resulting area of the basis vectors.
+
+Through the previous property, it can be seen that the product of a singular and a non singular matrix is singular - the product where one of the determinants is zero will necessarily be zero as well, signifying that the produced matrix is singular.
+
+Another consequence is that the determinant of an inverse matrix is equal to the inverse of the determinant of the original matrix (when the matrix is invertible). This can be deduced this way:
+
+considering that 
+$$
+det(AB) = det(A)det(B)  
+$$
+
+then 
+$$
+det(A)*det(A^{-1}) = det(AA^{-1})
+$$
+
+and since $AA^{-1}$ is the identity matrix, with determinant equal to 1, then:
+
+$$
+det(A^{-1}) = \frac{1}{det(A)}
+$$
+
+
 ## Rank
 
 The rank of a matrix is its maximum number of linearly independent rows or columns. The number of independent rows is always equal to the number of independent columns. Intuitively, it represents the number of dimensions in which the matrix can spread out vectors - how many directions in space the matrix's transformation affects.
