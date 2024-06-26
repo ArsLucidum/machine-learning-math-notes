@@ -18,29 +18,29 @@ $$
 The **coefficient matrix** 𝐴 consists of the coefficients of 𝑥 and 𝑦 in each equation:
 
 $$
-A = \begin{pmatrix}
+A = \begin{bmatrix}
 2 & 3 \\
 1 & -1
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 The **variable vector** x contains the variables of the system:
 
 $$
-\mathbf{x} = \begin{pmatrix}
+\mathbf{x} = \begin{bmatrix}
 x \\
 y
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 And the **constants vector** b contains the constants from the right-hand side of the equations:
 % Constants Vector
 
 $$
-\mathbf{b} = \begin{pmatrix}
+\mathbf{b} = \begin{bmatrix}
 5 \\
 1
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 The full matrix equation would then be:
@@ -52,18 +52,18 @@ $$
 or, expanded:
 
 $$
-\begin{pmatrix}
+\begin{bmatrix}
 2 & 3 \\
 1 & -1
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 x \\
 y
-\end{pmatrix}
-= \begin{pmatrix}
+\end{bmatrix}
+= \begin{bmatrix}
 5 \\
 1
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 ## Linear independence
@@ -149,11 +149,11 @@ The determinant can help understand the rank of a matrix. When the determinant i
 An identity matrix $𝐼_𝑛$ is a square matrix with ones on the diagonal and zeros elsewhere. For example, the identity matrix of size 3 is:
 
 $$
-I_3 = \begin{pmatrix}
+I_3 = \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 It is important because multiplying any matrix by it leaves the original unchanged - it represents a transformation that leaves all vectors as they were, just like multiplying any number by 1 results in the original number.
@@ -247,15 +247,15 @@ Conditions for multiplication are that the number of columns of the first matrix
 The calculation itself can be thought of as a combination of dot products for the rows and colums of the matrices. For example, if $A$ and $B$ are both $2 \times 2$ matrices:
 
 $$
- A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}
+ A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}
 
- B = \begin{pmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{pmatrix}
+ B = \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix}
 $$
 
 Then their product $C = A \times B$ is:
 
 $$
- C = \begin{pmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{pmatrix}
+ C = \begin{bmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{bmatrix}
 $$
 
 Where:
@@ -267,3 +267,93 @@ $$ c_{12} = a_{11} b_{12} + a_{12} b_{22} $$
 $$ c_{21} = a_{21} b_{11} + a_{22} b_{21} $$
 
 $$ c_{22} = a_{21} b_{12} + a_{22} b_{22} $$
+
+## Eigenvalues and eigenvectors
+
+### Span
+
+The span of a set of vectors is the set of all possible linear combinations of these vectors - the collection of all vectors that can be made by scaling and adding those vectors togeteher. 
+
+Saying that a set of vectors spans a space V means that all vectors in V can be written as a combination of those vectors
+
+### Basis
+
+A basis of a vector space is a set of vectors that satisfy two conditions:
+
+- they are linearly independent
+- they span said vector space.
+
+The basis must be minimal, meaning that no vector can be removed from the basis without losing the ability to span the space - this is implied by the linear independence requirement. 
+
+Any basis has the same amount of elements in the set as the dimension they span (so for example, a 2D space has 2 vectors as its basis).
+
+### Eigenvectors 
+
+Given a linear transformation represented by the matrix A, an eigenvector v for it is a non-zero vector that satisfies the equation $Av = \lambda v$. 
+
+In simpler words, an eigenvector is a vector in a direction that is not changed by the transformation, except for being scaled (stretched or shrunk) by a factor $\lambda$, which we call an **eigenvalue**.
+
+Eigenvectors and eigenvalues are interesting because they allow to substitute some complex operations (matrix multiplications) for simple/more performant constant multiplication.
+
+Another interesting property is that the determinant of a matrix is the product of its eigenvalues. The proof is left aside because it is a bit lengthy in the general case, and only immediately intuitive for diagonalizable matrices.
+
+### Eigenbasis
+
+An eigenbasis of a matrix A is a basis formed by eigenvectors that span A's vector space.
+
+### Finding eigenvalues and eigenvectors
+
+Eigenvectors of a matrix behave as those of a diagonal matrix (they only stretch).  Written mathematically, there are infinite (x,y) for which:
+
+$$
+A  \begin{bmatrix}
+   x \\
+   y \\ 
+\end{bmatrix}
+= 
+ \begin{bmatrix}
+\lambda & 0 \\
+0 & \lambda  \\
+\end{bmatrix}
+ \begin{bmatrix}
+   x \\
+   y \\ 
+\end{bmatrix}
+$$
+
+The process of finding eigenvectors and eigenvalues involves two steps:
+
+- Finding for which diagonal matrices ($\lambda I$) our matrix behaves like them in some vectors - those lambdas are  eigenvalues.
+- Once we know those diagonal matrices, we find out which vectors are behaving like them in our matrix - those are  eigenvectors.
+
+
+Starting from the previous equation, if we move that $\lambda I$ matrix to the left side:
+$$
+(A - 
+ \begin{bmatrix}
+\lambda & 0 \\
+0 & \lambda  \\
+\end{bmatrix}
+)
+ \begin{bmatrix}
+   x \\
+   y \\ 
+\end{bmatrix}
+ = 0
+$$
+
+
+which means that $A-\lambda I$ is singular, since it's squashing at least some vector into zero. And given that it is singular:
+
+$$
+det(A-\lambda I) = 0
+$$
+
+expanding this determinant produces what's known as the **charasteristic polynomial** of A, and its roots when solving for $\lambda$ are the matrix' eigenvalues.
+
+once we have the eigenvalues we can calculate the corresponding eigenvectors by solving, for each one, 
+$$
+(A - \lambda I)v = 0
+$$ 
+each v found this way is an eigenvector of A.
+
