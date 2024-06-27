@@ -357,3 +357,143 @@ $$
 $$ 
 each v found this way is an eigenvector of A.
 
+### Projections
+
+A matrix can be projected into a lower dimension (a line, for example).
+
+to project A matrix A onto a vector V, we  need to multiply the matrix by the vector, and then divide by its norm:
+
+$$
+
+A_p = A \frac{v}{||v||_2}
+
+$$
+
+since A is an $(m*n)$ matrix, and v is $(n*1)$, the resulting matrix $A_p$ will be $(m*1)$
+
+Projecting to a two-vector matrix would be equivalent to projecting into the plane those vectors form. So in general:
+$$
+
+A_p = A \begin{bmatrix} 
+\frac{v_1}{||v_1||_2}
+\frac{v_2}{||v_2||_2}
+...
+\frac{v_n}{||v_n||_2}
+
+\end{bmatrix}
+
+$$
+
+### Covariance matrix
+
+A covariance matrix uses the concept of **variance** from statistics, which will not be described here but can be thought of as a measure of how spread out the data is.
+
+**Covariance** is needed as well, which can be described as a measure of how two sets of numbers change together. It tells you whether two variables tend to grow together (positive covariance) or whether one growing reduces the other (negative covariance). 
+
+
+A covariance matrix is a matrix that describes the covariance between the combinations of the variables. For example, for a datased with x and y values, the covariance matrix would be:
+
+$$
+
+C = \begin{bmatrix} 
+Cov(x,x) & Cov(x,y) \\
+Cov(y,x) & Cov(y,y) \\
+    
+\end{bmatrix}
+
+$$
+
+The covariance of a variable with itself happens to be the variance, so the previous formula turns to be equal to:
+
+
+$$
+
+C = \begin{bmatrix} 
+Var(x) & Cov(x,y) \\
+Cov(y,x) & Var(y) \\
+    
+\end{bmatrix}
+
+$$
+
+
+### Principal component analysis (PCA)
+
+PCA is a way to achieve dimensionality reduction while minimizing information loss. It works by combining the concepts of eigenvalues/eigenvectors, projections, and covariance matrices.
+
+The idea is the following: When performing dimensionality reduction, reducing information loss is equal to preserving as much variance as possible. 
+
+Choosing the space to which the information should be projected is then a matter of choosing the projection that preserves the most variance. This turns out to be the space spanned with the largest eigenvalues (of the covariance matrix).
+
+This conection between eigenvectors and variance arises from the fact that eigenvectors point to the directions where the matrix transformation is just scaling - the largest eigenvector is therefore the direction in which data stretches the most, which implices more variance.
+
+Given a table of data with $n$ columns, The process for PCA then becomes:
+
+- calculate the $n*n$ covariance matrix
+- find the eigenvalues and eigenvectors of that matrix
+- sort those pairs by eigenvalues
+- choose the top eigenvector/eigenvalue pairs (as many as the reduced dimension wanted)
+- project the original matrix into the chosen vectors
+
+Formulated mathematically:
+
+
+- Start with the matrix 
+
+$$
+\mathbf{X} = \begin{pmatrix}
+x_{11} & x_{12} & \cdots & x_{1n} \\
+x_{21} & x_{22} & \cdots & x_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+x_{n1} & x_{n2} & \cdots & x_{nn}
+\end{pmatrix}
+$$
+
+- Center the data around the mean
+$$
+\mathbf{X} - \boldsymbol{\mu} = \begin{pmatrix}
+x_{11} - \mu_1 & x_{12} - \mu_2 & \cdots & x_{1n} - \mu_n \\
+x_{21} - \mu_1 & x_{22} - \mu_2 & \cdots & x_{2n} - \mu_n \\
+\vdots & \vdots & \ddots & \vdots \\
+x_{n1} - \mu_1 & x_{n2} - \mu_2 & \cdots & x_{nn} - \mu_n
+\end{pmatrix}
+$$
+
+- Calculate the covariance matrix
+
+$$
+\mathbf{C} = \frac{1}{n-1}(X-\mu)^T(X -\mu) =\begin{pmatrix}
+\mathrm{Var}(X_1) & \mathrm{Cov}(X_1, X_2) & \cdots & \mathrm{Cov}(X_1, X_n) \\
+\mathrm{Cov}(X_2, X_1) & \mathrm{Var}(X_2) & \cdots & \mathrm{Cov}(X_2, X_n) \\
+\vdots & \vdots & \ddots & \vdots \\
+\mathrm{Cov}(X_n, X_1) & \mathrm{Cov}(X_n, X_2) & \cdots & \mathrm{Var}(X_n)
+\end{pmatrix}
+$$
+
+- Find the eigenvalue/eigenvector pairs and choose the largest ones
+$$
+\begin{array}{c|c}
+\text{Eigenvalue} & \text{Eigenvector} \\
+\hline
+\lambda_1 & \mathbf{v}_1 = \begin{pmatrix} v_{11} \\ v_{12} \\ \vdots \\ v_{1n} \end{pmatrix} \\
+\lambda_2 & \mathbf{v}_2 = \begin{pmatrix} v_{21} \\ v_{22} \\ \vdots \\ v_{2n} \end{pmatrix} \\
+\vdots & \vdots \\
+\lambda_n & \mathbf{v}_n = \begin{pmatrix} v_{n1} \\ v_{n2} \\ \vdots \\ v_{nn} \end{pmatrix}
+\end{array}
+$$
+
+- Create the projection matrix with the chosen eigenvectors
+
+$$
+\mathbf{V} = \begin{bmatrix}
+\frac{\mathbf{v}_1}{\|\mathbf{v}_1\|} & \frac{\mathbf{v}_2}{\|\mathbf{v}_2\|} & \cdots & \frac{\mathbf{v}_k}{\|\mathbf{v}_k\|}
+\end{bmatrix}
+$$
+
+- Project centered data into the projection matrix:
+
+$$
+X_{PCA} = (X - \mu)V
+$$
+
+The resulting $X_{PCA}$ will have the reduced form of the original data with minimal information loss.
