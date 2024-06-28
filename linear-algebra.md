@@ -326,7 +326,6 @@ An eigenbasis of a matrix A is a basis formed by eigenvectors that span A's vect
 Eigenvectors of a matrix behave as those of a diagonal matrix (they only stretch).  Written mathematically, there are infinite (x,y) for which:
 
 $$
-
 A  \begin{bmatrix}
    x \\
    y \\ 
@@ -340,8 +339,8 @@ A  \begin{bmatrix}
    x \\
    y \\ 
 \end{bmatrix}
-
 $$
+
 
 The process of finding eigenvectors and eigenvalues involves two steps:
 
@@ -350,6 +349,7 @@ The process of finding eigenvectors and eigenvalues involves two steps:
 
 
 Starting from the previous equation, if we move that $\lambda I$ matrix to the left side:
+
 $$
 (A - 
  \begin{bmatrix}
