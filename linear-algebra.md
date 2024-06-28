@@ -318,15 +318,14 @@ An eigenbasis of a matrix A is a basis formed by eigenvectors that span A's vect
 Eigenvectors of a matrix behave as those of a diagonal matrix (they only stretch).  Written mathematically, there are infinite (x,y) for which:
 
 $$
-A
-\begin{bmatrix}
+A \begin{bmatrix}
 x \\
 y \\
 \end{bmatrix}
-=
-\begin{bmatrix}
+=\begin{bmatrix}
 \lambda & 0 \\
-0 & \lambda  \\\end{bmatrix}
+0 & \lambda  \\
+\end{bmatrix}
 \begin{bmatrix}
 x \\
 y \\
