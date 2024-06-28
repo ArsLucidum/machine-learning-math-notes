@@ -318,21 +318,21 @@ An eigenbasis of a matrix A is a basis formed by eigenvectors that span A's vect
 Eigenvectors of a matrix behave as those of a diagonal matrix (they only stretch).  Written mathematically, there are infinite (x,y) for which:
 
 $$
-A  \begin{bmatrix}
-   x \\
-   y \\ 
+A  
+\begin{bmatrix}
+x \\
+y \\ 
 \end{bmatrix}
 = 
- \begin{bmatrix}
+\begin{bmatrix}
 \lambda & 0 \\
 0 & \lambda  \\
 \end{bmatrix}
- \begin{bmatrix}
-   x \\
-   y \\ 
+\begin{bmatrix}
+x \\
+y \\ 
 \end{bmatrix}
 $$
-
 
 The process of finding eigenvectors and eigenvalues involves two steps:
 
@@ -483,10 +483,10 @@ $$
 \begin{array}{c|c}
 \text{Eigenvalue} & \text{Eigenvector} \\
 \hline
-\lambda_1 & \mathbf{v}_1 = \begin{pmatrix} v_{11} \\ v_{12} \\ \vdots \\ v_{1n} \end{pmatrix} \\
-\lambda_2 & \mathbf{v}_2 = \begin{pmatrix} v_{21} \\ v_{22} \\ \vdots \\ v_{2n} \end{pmatrix} \\
+\lambda_1 & \mathbf{v}_1 = \begin{bmatrix} v_{11} \\ v_{12} \\ \vdots \\ v_{1n} \end{bmatrix} \\
+\lambda_2 & \mathbf{v}_2 = \begin{bmatrix} v_{21} \\ v_{22} \\ \vdots \\ v_{2n} \end{bmatrix} \\
 \vdots & \vdots \\
-\lambda_n & \mathbf{v}_n = \begin{pmatrix} v_{n1} \\ v_{n2} \\ \vdots \\ v_{nn} \end{pmatrix}
+\lambda_n & \mathbf{v}_n = \begin{bmatrix} v_{n1} \\ v_{n2} \\ \vdots \\ v_{nn} \end{bmatrix}
 \end{array}
 $$
 
