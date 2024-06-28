@@ -259,11 +259,17 @@ The calculation itself can be thought of as a combination of dot products for th
 
 
 $$
+A = \begin{bmatrix} 
+a_{11} & a_{12} \\ 
+a_{21} & a_{22} 
+\end{bmatrix}
+$$
 
- A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}
-
- B = \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix}
-
+$$
+B = \begin{bmatrix} 
+b_{11} & b_{12} \\ 
+b_{21} & b_{22} 
+\end{bmatrix}
 $$
 
 Then their product $C = A \times B$ is:
