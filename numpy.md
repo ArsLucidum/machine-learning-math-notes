@@ -190,3 +190,7 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
 - `A @ B` also works as an alternative nomenclature
 - for dimensions that aren't compatible with multiplication, a ValueError will be raised
 - an exception is vector multiplication - when done with `.matmul`, it will work (meaning that the second vector will be automatically transposed)
+
+#### eigenvectors
+
+- `A_eig = np.linalg.eig(A)` will return a tuple. The first element contains the eigenvalues, and the second one the eigenvectors.

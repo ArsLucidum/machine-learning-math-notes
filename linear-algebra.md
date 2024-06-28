@@ -122,13 +122,19 @@ Through the previous property, it can be seen that the product of a singular and
 Another consequence is that the determinant of an inverse matrix is equal to the inverse of the determinant of the original matrix (when the matrix is invertible). This can be deduced this way:
 
 considering that 
+
 $$
+
 det(AB) = det(A)det(B)  
+
 $$
 
 then 
+
 $$
+
 det(A)*det(A^{-1}) = det(AA^{-1})
+
 $$
 
 and since $AA^{-1}$ is the identity matrix, with determinant equal to 1, then:
@@ -204,8 +210,11 @@ unlike the row echelon form, the reduced version is unique per matrix.
 - The $L1$ norm, also known as taxicab distance, is the sum of the absolute values of all components.
 
 - the $L2$ norm, or euclidean distance, is equal to:
+
   $$
+  
    d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2 + \cdots + (w_2 - w_1)^2}
+
   $$
 
 ### Operations
@@ -221,7 +230,9 @@ unlike the row echelon form, the reduced version is unique per matrix.
 - the dot product is the sum of all coordinates' products (the l2-norm is the square root of the vector with itself).
 
   $$
+
    \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i
+
   $$
 
 - it is related to the angle between the vectors: ortogonal vectors have dot product equal to 0.
@@ -246,10 +257,13 @@ Conditions for multiplication are that the number of columns of the first matrix
 
 The calculation itself can be thought of as a combination of dot products for the rows and colums of the matrices. For example, if $A$ and $B$ are both $2 \times 2$ matrices:
 
+
 $$
+
  A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}
 
  B = \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix}
+
 $$
 
 Then their product $C = A \times B$ is:
@@ -306,6 +320,7 @@ An eigenbasis of a matrix A is a basis formed by eigenvectors that span A's vect
 Eigenvectors of a matrix behave as those of a diagonal matrix (they only stretch).  Written mathematically, there are infinite (x,y) for which:
 
 $$
+
 A  \begin{bmatrix}
    x \\
    y \\ 
@@ -319,6 +334,7 @@ A  \begin{bmatrix}
    x \\
    y \\ 
 \end{bmatrix}
+
 $$
 
 The process of finding eigenvectors and eigenvalues involves two steps:
@@ -352,9 +368,13 @@ $$
 expanding this determinant produces what's known as the **charasteristic polynomial** of A, and its roots when solving for $\lambda$ are the matrix' eigenvalues.
 
 once we have the eigenvalues we can calculate the corresponding eigenvectors by solving, for each one, 
+
 $$
+
 (A - \lambda I)v = 0
+
 $$ 
+
 each v found this way is an eigenvector of A.
 
 ### Projections
@@ -372,6 +392,7 @@ $$
 since A is an $(m*n)$ matrix, and v is $(n*1)$, the resulting matrix $A_p$ will be $(m*1)$
 
 Projecting to a two-vector matrix would be equivalent to projecting into the plane those vectors form. So in general:
+
 $$
 
 A_p = A \begin{bmatrix} 
