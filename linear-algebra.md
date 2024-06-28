@@ -124,17 +124,13 @@ Another consequence is that the determinant of an inverse matrix is equal to the
 considering that 
 
 $$
-
 det(AB) = det(A)det(B)  
-
 $$
 
 then 
 
 $$
-
 det(A)*det(A^{-1}) = det(AA^{-1})
-
 $$
 
 and since $AA^{-1}$ is the identity matrix, with determinant equal to 1, then:
@@ -211,11 +207,9 @@ unlike the row echelon form, the reduced version is unique per matrix.
 
 - the $L2$ norm, or euclidean distance, is equal to:
 
-  $$
-  
-   d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2 + \cdots + (w_2 - w_1)^2}
-
-  $$
+$$
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2 + \cdots + (w_2 - w_1)^2}
+$$
 
 ### Operations
 
@@ -229,11 +223,9 @@ unlike the row echelon form, the reduced version is unique per matrix.
 
 - the dot product is the sum of all coordinates' products (the l2-norm is the square root of the vector with itself).
 
-  $$
-
-   \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i
-
-  $$
+$$
+\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i
+$$
 
 - it is related to the angle between the vectors: ortogonal vectors have dot product equal to 0.
 
@@ -376,9 +368,7 @@ expanding this determinant produces what's known as the **charasteristic polynom
 once we have the eigenvalues we can calculate the corresponding eigenvectors by solving, for each one, 
 
 $$
-
 (A - \lambda I)v = 0
-
 $$ 
 
 each v found this way is an eigenvector of A.
@@ -390,9 +380,7 @@ A matrix can be projected into a lower dimension (a line, for example).
 to project A matrix A onto a vector V, we  need to multiply the matrix by the vector, and then divide by its norm:
 
 $$
-
 A_p = A \frac{v}{||v||_2}
-
 $$
 
 since A is an $(m*n)$ matrix, and v is $(n*1)$, the resulting matrix $A_p$ will be $(m*1)$
@@ -400,15 +388,12 @@ since A is an $(m*n)$ matrix, and v is $(n*1)$, the resulting matrix $A_p$ will 
 Projecting to a two-vector matrix would be equivalent to projecting into the plane those vectors form. So in general:
 
 $$
-
 A_p = A \begin{bmatrix} 
 \frac{v_1}{||v_1||_2}
 \frac{v_2}{||v_2||_2}
 ...
 \frac{v_n}{||v_n||_2}
-
 \end{bmatrix}
-
 $$
 
 ### Covariance matrix
@@ -421,26 +406,20 @@ A covariance matrix uses the concept of **variance** from statistics, which will
 A covariance matrix is a matrix that describes the covariance between the combinations of the variables. For example, for a datased with x and y values, the covariance matrix would be:
 
 $$
-
 C = \begin{bmatrix} 
 Cov(x,x) & Cov(x,y) \\
 Cov(y,x) & Cov(y,y) \\
-    
 \end{bmatrix}
-
 $$
 
 The covariance of a variable with itself happens to be the variance, so the previous formula turns to be equal to:
 
 
 $$
-
 C = \begin{bmatrix} 
 Var(x) & Cov(x,y) \\
 Cov(y,x) & Var(y) \\
-    
 \end{bmatrix}
-
 $$
 
 
@@ -477,6 +456,7 @@ x_{n1} & x_{n2} & \cdots & x_{nn}
 $$
 
 - Center the data around the mean
+
 $$
 \mathbf{X} - \boldsymbol{\mu} = \begin{pmatrix}
 x_{11} - \mu_1 & x_{12} - \mu_2 & \cdots & x_{1n} - \mu_n \\
@@ -498,6 +478,7 @@ $$
 $$
 
 - Find the eigenvalue/eigenvector pairs and choose the largest ones
+
 $$
 \begin{array}{c|c}
 \text{Eigenvalue} & \text{Eigenvector} \\
