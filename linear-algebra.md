@@ -326,13 +326,13 @@ y \\
 = 
 \begin{bmatrix}
 \lambda & 0 \\
-0 & \lambda  \\
-\end{bmatrix}
+0 & \lambda  \\\end{bmatrix}
 \begin{bmatrix}
 x \\
 y \\ 
 \end{bmatrix}
 $$
+
 
 The process of finding eigenvectors and eigenvalues involves two steps:
 
