@@ -482,8 +482,7 @@ $$
 \text{Eigenvalue} & \text{Eigenvector} \\
 \hline
 \lambda_1 & \mathbf{v}_1 = 
-\begin{bmatrix} v_{11} \\ v_{12} \\ \vdots \\ v_{1n} \end{bmatrix} \\ 
-\lambda_2 & \mathbf{v}_2 = \begin{bmatrix} v_{21} \\ v_{22} \\ \vdots \\ v_{2n} \end{bmatrix} \\
+\begin{bmatrix} v_{11} \\ v_{12} \\ \vdots \\ v_{1n} \end{bmatrix} \\ \lambda_2 & \mathbf{v}_2 = \begin{bmatrix} v_{21} \\ v_{22} \\ \vdots \\ v_{2n} \end{bmatrix} \\
 \vdots & \vdots \\
 \lambda_n & \mathbf{v}_n = \begin{bmatrix} v_{n1} \\ v_{n2} \\ \vdots \\ v_{nn} \end{bmatrix}
 \end{array}
