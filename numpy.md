@@ -135,8 +135,8 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
     [
         array([[ 1], [ 5], [ 9], [13]]),
         array([[ 2,  3], [ 6,  7], [10, 11], [14, 15]]),
-        array([[ 4], [ 8], [12], [16]]
-    )]`
+        array([[ 4], [ 8], [12], [16]])
+    ]
     ```
 
   - the previous technique is equivalent to slicing, but more convenient when splitting on several place.
