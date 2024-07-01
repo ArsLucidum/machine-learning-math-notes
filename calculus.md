@@ -72,3 +72,13 @@ f(x) = \tan(x) \\
 f'(x) = \sec^2(x)
 $$
 
+#### $e$ and its derivative
+
+The number $e$ is a mathematical constant defined as:
+
+$$
+e = \lim_{n \to \infty} (1 + \frac{1}{n})^n
+$$
+
+One of it's interesting properties is present in the function $f(x)= e^x$, which is it's own derivative: $f'(x) = e^x$.
+
