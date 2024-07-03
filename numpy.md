@@ -150,7 +150,7 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
 
 - `np.linalg.det(A)` will return the determinant of a (square) matrix.
 
-### plotting lines: matplotlib
+## plotting lines: matplotlib
 
 - previous import of the package is required:
   `import matplotlib.pyplot as plt `
@@ -164,7 +164,7 @@ Numpy uses its own version of arrays, called `ndarray` - more internally perform
 
     `plot_lines(A_system)`
 
-### vectors
+## vectors
 
 #### scalar multiplication
 
