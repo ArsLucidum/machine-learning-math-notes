@@ -501,3 +501,6 @@ X_{PCA} = (X - \mu)V
 $$
 
 The resulting $X_{PCA}$ will have the reduced form of the original data with minimal information loss.
+
+
+[TODO 3blue1brown's essence of algebra]
