@@ -81,5 +81,3 @@ e = \lim_{n \to \infty} (1 + \frac{1}{n})^n
 $$
 
 One of it's interesting properties is present in the function $f(x)= e^x$, which is it's own derivative: $f'(x) = e^x$.
-
-[TODO 3blue1brown's essence of calculus]
