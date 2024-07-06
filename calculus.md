@@ -81,3 +81,52 @@ e = \lim_{n \to \infty} (1 + \frac{1}{n})^n
 $$
 
 One of it's interesting properties is present in the function $f(x)= e^x$, which is it's own derivative: $f'(x) = e^x$.
+
+#### logarithms 
+
+(here using $log$ always refers to the natural log, $ln$)
+
+A logarithm is the inverse of the exponential of e, because:
+
+- $e^{log(x)} = x$
+- $log(e^y) = y$
+
+for the log function, its derivative is:
+
+$f(x) = log(x)$
+
+$f'(x) = \frac{1}{x}$
+
+#### Existence of the derivative
+
+Not all functions have a derivative in all points.
+
+Non differentiable points exist wherever tangents can not be well defined - corners, discontinuities, vertical tangents, etc. A function is called differentiable in an interval if it is differentiable in all points of the interval.
+
+#### Properties of the derivative
+
+##### multiplication by scalars
+
+given $f = cg$, then $f' = cg'$
+
+##### sum rule
+
+given $f = g+ h$, then $f' = g' + h'$
+
+##### product rule
+
+given $f = gh$, then $f' = g'h + gh'$
+
+##### chain rule
+
+given $f = g(h(t))$, then $f' = g(h(t)) h'(t)$
+
+or, perhaps clearer with Leibniz's notation:
+
+$\frac{dy}{dx}= \frac{dy}{du} \frac{du}{dx}$
+
+
+
+
+
+
