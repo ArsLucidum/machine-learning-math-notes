@@ -140,4 +140,14 @@ For many predictions, the formula is the average:
 MSE = $\frac{1}{n}\sum\limits_{i=1}^{n}(y_i−\hat{y_i}​)^2$
 
 
+### Partial derivatives
 
+A partial derivative of a function of several variables is its derivative with respect to one of those variables, with the others held constant.
+
+they are denoted by the symbol $\partial$, read as 'partial' or 'del'.
+
+Given a function $f(x,y)$ its two partial derivatives are defined as:
+
+$\frac{\partial f}{\partial x} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x}$
+
+$\frac{\partial f}{\partial y} = \lim_{\Delta y \to 0} \frac{f(x, y + \Delta y) - f(x, y)}{\Delta y}$
