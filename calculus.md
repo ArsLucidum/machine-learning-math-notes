@@ -119,14 +119,25 @@ given $f = gh$, then $f' = g'h + gh'$
 
 ##### chain rule
 
-given $f = g(h(t))$, then $f' = g(h(t)) h'(t)$
+given $f = g(h(t))$, then $f' = g'(h(t)) h'(t)$
 
 or, perhaps clearer with Leibniz's notation:
 
 $\frac{dy}{dx}= \frac{dy}{du} \frac{du}{dx}$
 
 
+### Square loss (Mean Squared Error, MSE)
 
+
+This is a function commonly used in machine learning as a loss function.
+
+The idea is to calculate the difference between the actual value and the predicted value. Then the difference is squared, to both ensure all errors are positive and to penalize larger errors more:
+
+$(y−\hat{y}​)^2$
+
+For many predictions, the formula is the average:
+
+MSE = $\frac{1}{n}\sum\limits_{i=1}^{n}(y_i−\hat{y_i}​)^2$
 
 
 

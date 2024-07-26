@@ -66,11 +66,35 @@ print(df_symb_numpy(x_array))
 $
 
 
-## Diferentiation
+## Symbolic Diferentiation
 
 sypmy can be used to find derivatives:
 
 `diff(x**3,x)` => $3x^2$
 
 it applies the sum, product and chain rules automatically.
+
+sometimes there are limitations about differentiation with symbolic expressions. For example, evaluating derivatives of functions with jumps fail to evaluate expressions producing complicated functions - something called function swell.
+
+## Numerical Differentiation
+
+This is a method that does not take into account the function expression, but rather just approximates the derivative by using the values for the points at $x$ and $x + dx$.
+
+`np.gradient` is one of the functions that can be used for this method.
+
+Different implementations of this idea have different performance, but they all produce only aproximate results. 
+
+Besides lack of precision - which is not usually a problem, since it can be accurate enough for ML applications - some downsides of numerical differentiation are inaccuracy at jumps in the function (just like symbolic differentiation), and most importantly, slow speed - performing function evaluation for hundreds of derivatives can be a problem in ML uses.
+
+## Automatic Differentiation
+
+This third method, which is the most commonly used, is based on breaking down a function in common function ($sin$, $cos$, $log$, etc) to build a computational graph, so that the derivative can be computed later using the chain rule. 
+
+The ability to 'compile' the graph function at the time of building the network, saving computational time later, makes it interesting for ML.
+
+The main disadvantage is difficulty of implementation, but there are some libraries available that provide this functionality, like JAX:
+
+Given a previously defined function f, `grad(f)(3.0)` will return the derivative at 3 (integers cannot be used). Broadcasting can be used to find derivatives for a whole function, by using vmap: `vmap(grad(f))(x_array_jnp)`.
+
+
 
