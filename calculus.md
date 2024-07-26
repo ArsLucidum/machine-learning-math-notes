@@ -165,3 +165,26 @@ The gradient points in the direction of the steepest ascent of the function - gi
 The magnitude of the gradient represents the rate of increase in that direciton (larger magnitude implies steeper ascent).
 
 The gradient vector is normal to the tangent plane (or more generally, the tangent n-1 dimensional space) of the function. In a way, the vector defines this tangent plane, since it provides by itself enough information to construct the plane's equation.
+
+Just like finding local minimums and maximums in single variable functions involves finding the places where $f'(x) = 0$, in multivariable calculus those points can be found by solving for each partial derivative equal 0.
+
+### Gradient descent
+
+Gradient Descent is an optimization algorithm used to find the minimum of a differentiable function in a performant way. It involves iteratively moving towards the steepest descent.
+
+Given a function $f(\mathbf{x})$, where $\mathbf{x}$ is a parameter vector, the idea is: 
+
+- start with an initial guess
+- calculate the gradient $\nabla f(x)$ at the current point
+- update the parameters according to the update rule
+- repeat the system until reaching a threshold or maximum number of iterations.
+
+The update rule is as follows:
+
+
+$\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)$
+
+where:
+
+-  $\mathbf{x}_k$ is the current value of the parameter vector 
+- $\alpha$ (alpha) is the learning rate, sometimes also expressed as $\eta$ (eta), a small positive number that controls the size of the steps towards the minimum - choosing a good value for it is a complex problem in itself. 
