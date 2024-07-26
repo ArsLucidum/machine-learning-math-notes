@@ -151,3 +151,17 @@ Given a function $f(x,y)$ its two partial derivatives are defined as:
 $\frac{\partial f}{\partial x} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x}$
 
 $\frac{\partial f}{\partial y} = \lim_{\Delta y \to 0} \frac{f(x, y + \Delta y) - f(x, y)}{\Delta y}$
+
+### Gradients
+
+Given a function of several variables $f(x_1,x_2, \dots  x_n)$, the gradient is a vector that contains all its partial derivatives.
+
+it is denoted using the gradiant operator (pronounced 'grad'), with the symbol  $\nabla$ (nabla):
+
+$\nabla f(x,y) = [\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}]$
+
+The gradient points in the direction of the steepest ascent of the function - given a point on a hill described by $f$, the gradient would point in the direction that gets you uphill the fastest. 
+
+The magnitude of the gradient represents the rate of increase in that direciton (larger magnitude implies steeper ascent).
+
+The gradient vector is normal to the tangent plane (or more generally, the tangent n-1 dimensional space) of the function. In a way, the vector defines this tangent plane, since it provides by itself enough information to construct the plane's equation.
