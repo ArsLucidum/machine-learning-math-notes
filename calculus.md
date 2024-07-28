@@ -188,3 +188,68 @@ where:
 
 -  $\mathbf{x}_k$ is the current value of the parameter vector 
 - $\alpha$ (alpha) is the learning rate, sometimes also expressed as $\eta$ (eta), a small positive number that controls the size of the steps towards the minimum - choosing a good value for it is a complex problem in itself. 
+
+There are several drawbacks to gradient descent: learning rates too large risk jumping over the minimum, while rates too small can take forever to optimize; there's also a posibility of getting stuck in a local minimum, which is usually adressed by running the algorithm many times with different starting points and learning rates.
+
+
+### Newton's method
+
+Newton's method can be used as an alternative method to gradient descent for optimization.
+
+Newton's method, in its original form, is used to quickly find iteratively the intercept of a function with 0. 
+
+The idea is to start at a point $f(x_1)$, calculate its tangent line, and then find the point where that tangent intercepts the 0 axis. taking that point as $x_2$, one then takes the tangent line to $f(x_2)$, and so on.
+
+The formula for an update in its original form is:
+
+$x_{k+1} = x_{k} - \frac{f(x_k)}{f'(x_k)}$
+
+In our case, given a function $g$ to minimize, we want to find zeros of its derivative $g'$, so the formula becomes:
+
+$x_{k+1} = x_{k} - \frac{g'(x_k)}{(g'(x_k))'}$
+
+### Second derivative
+
+The second derivative of a function is the derivative of its derivative.
+
+A second derivative indicates curvature: 
+
+- $\frac{d^2x}{dt^2} > 0$ means the function is convex (concave up). If the first derivative is 0, it's a local minimum
+- $\frac{d^2x}{dt^2} < 0$ means the function is concave (concave down).If the first derivative is 0, it's a local maximum
+
+- $\frac{d^2x}{dt^2} = 0$ is inconclusive information.
+
+### The Hessian
+
+In multivariable calculus, just like a first derivative becomes the $\nabla f$ gradient vector, the second derivative becomes a matrix:
+
+$$
+H(x,y) = \begin{bmatrix}
+f_{xx}(xy) && f_{xy}(x,y) \\
+f_{yx}(xy) && f_{yy}(x,y) \\
+\end{bmatrix}
+$$
+
+Concavity works with the hessian in a similar way as it does with the second derivative for single variable calculus.
+
+In this case, to know if a matrix is concave, we look at the eigenvalues: 
+
+- If both are positive, then the matrix is positive definite and the function is concave up. 
+- If both are negative, then the matrix is negative definite and the function is concave down.
+- otherwise, we cannot conclude anything.
+
+### Newton's method - multivariable calculus
+
+For multivariable functions, Newton's method substitute the first derivative for the gradient and the second for the hessian:
+
+$
+\begin{bmatrix}
+x_{k+1} \\
+y_{k+1} \\
+\end{bmatrix} = \begin{bmatrix}
+x_{k} \\
+y_{k}
+\end{bmatrix} - H^{-1}(x_k,y_k) \nabla f (x_k,y_k)
+$
+
+(The order of multiplication is not interchangeable due to its dimension)
