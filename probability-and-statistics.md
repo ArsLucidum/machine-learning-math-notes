@@ -22,6 +22,10 @@ when the events can happen at the same time (**joint events**) the sum rule appl
 
 $P(A \cup B)= P(A) + P(B) - P(A \cap B)$
 
+where:
+- $P(A \cup B)$ is the probability of either of the events happening
+- $P(A \cap B)$ is the probability of both of them happening
+
 for independent events, the product rule allows us to know the probability of both happening at the same time:
 
 
@@ -32,3 +36,17 @@ There is a more complete version that applies to both dependent and independent 
 $P(A \cap B)= P(A) \cdot P(B|A)$
 
 The last part, $P(B|A)$, is read as 'probability of B given A', and represents the conditional probability of B happening if we assume A has already happened. For independent events, $P(B|A) = P(B)$ since, by definition, A happening will not affect the chances of B happening. 
+
+### Bayes theorem
+
+Bayes theory is a fundamental formula that describes how to update the probability of a hypothesis based on new evidence.
+
+[TODO explain both forms]
+
+$
+P(A|B) = \frac{P(A|B) \cdot P(A)}{P(B)}
+$
+
+$
+P(A|B) = \frac{P(A) \cdot P(B|A) }{ P(A) \cdot P(B|A) + P(A') \cdot P(B|A')}
+$
