@@ -68,6 +68,7 @@ When only two mutually exclusive events ($A$ and $A'$) are considered,  the bays
 $
 P(A|B) = \frac{P(A) \cdot P(B|A) }{ P(A) \cdot P(B|A) + P(A') \cdot P(B|A')}
 $
+
 This comes from the Law of total probability, which states that the  probability of an event B is equal to the probability of B and A happening plus the probablity of B and A' happening:
 
 $P(B) = P(B \cap A) + P(B \cap A')$
