@@ -74,3 +74,33 @@ This comes from the Law of total probability, which states that the  probability
 $P(B) = P(B \cap A) + P(B \cap A')$
 
 This version is longer, more cumbersome and applies to fewer cases, but it is used in some situations due to increased clarity.
+
+### Random variables
+
+a random variable is a variable whose possible values are numerical outcome of a random pehonemon. They represent non deterministic outcomes. They are a function that assign a numerical value to each outcome in the sample space of a random experiment.
+
+Random variables can be either **discrete** or **continuous**.
+
+### Probability distributions
+
+Random variables have associated probability distributions, that describe how probabilities are assinged to all possible outcomes of a random variable.
+
+#### Probability Mass Function (PMF)
+
+In the case of discrete random variables, the probability distribution can be described using the probability mass function. It is a function that provides the probability of each possible discrete value of the variable.
+
+the PMF is denoted as ${P(X = x)}$.
+
+It has to validate two properties:
+
+- all probabilities are 0 or larger: $P(X=x) \geq 0$ for all $x$
+- the sum of all probabilities add up to 1:$\sum_xP(X =x) = 1$
+
+For example, for the experiment of throwing a dice, $X$ can be the random variable for the result, and the probability of the dice landing in 1 can be written as:
+
+$P(X = 1) = \frac{1}{6}$
+
+
+The whole mass function is described as:
+
+$P(X =x) = \frac{1}{6}$ for $x \in \{1,2,3,4,5,6\}$
