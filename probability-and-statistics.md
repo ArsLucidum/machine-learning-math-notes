@@ -41,12 +41,35 @@ The last part, $P(B|A)$, is read as 'probability of B given A', and represents t
 
 Bayes theory is a fundamental formula that describes how to update the probability of a hypothesis based on new evidence.
 
-[TODO explain both forms]
+The formula is as follows:
 
 $
-P(A|B) = \frac{P(A|B) \cdot P(A)}{P(B)}
+P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}
 $
+
+where:
+
+- $H$ is the hypothesis
+- $E$ is the evidence
+- $P(H|E)$ is the posterior probability - the probability of the hypothesis given the evidence
+- $P(E|H)$ is the likelihood - the probability of observingi the evidence if the hypothesis is true.
+- $P(H)$ is the prior probability - the initial probability of the hypothesis before observing the evidence
+- $P(E)$ is the evidence - the total probability of observing the evidence in all possible hypotheses.
+
+For an example, asuming that 
+
+- H is the hypothesis of having contracted a disease
+- E is the evidence of a positive test
+ 
+then $P(H|E)$, the probability of having the disease having tested positive, equals $P(E|H)$ (the possiblity of testing positive if sick) times $P(H)$ (posibility of contracting the disease in general) divided by $P(E)$ (the posiblity of testing positive in general)
+
+When only two mutually exclusive events ($A$ and $A'$) are considered,  the bayser theorem can be expressed in this longer form:
 
 $
 P(A|B) = \frac{P(A) \cdot P(B|A) }{ P(A) \cdot P(B|A) + P(A') \cdot P(B|A')}
 $
+This comes from the Law of total probability, which states that the  probability of an event B is equal to the probability of B and A happening plus the probablity of B and A' happening:
+
+$P(B) = P(B \cap A) + P(B \cap A')$
+
+This version is longer, more cumbersome and applies to fewer cases, but it is used in some situations due to increased clarity.
