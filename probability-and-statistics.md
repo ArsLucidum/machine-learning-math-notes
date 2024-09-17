@@ -43,9 +43,7 @@ Bayes theory is a fundamental formula that describes how to update the probabili
 
 The formula is as follows:
 
-$
-P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}
-$
+$$P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}$$
 
 where:
 
@@ -65,9 +63,7 @@ then $P(H|E)$, the probability of having the disease having tested positive, equ
 
 When only two mutually exclusive events ($A$ and $A'$) are considered,  the bayser theorem can be expressed in this longer form:
 
-$
-P(A|B) = \frac{P(A) \cdot P(B|A) }{ P(A) \cdot P(B|A) + P(A') \cdot P(B|A')}
-$
+$$P(A|B) = \frac{P(A) \cdot P(B|A)}{P(A) \cdot P(B|A) + P(A') \cdot P(B|A')}$$
 
 This comes from the Law of total probability, which states that the  probability of an event B is equal to the probability of B and A happening plus the probablity of B and A' happening:
 
@@ -94,7 +90,7 @@ the PMF is denoted as ${P(X = x)}$.
 It has to validate two properties:
 
 - all probabilities are 0 or larger: $P(X=x) \geq 0$ for all $x$
-- the sum of all probabilities add up to 1:$\sum_xP(X =x) = 1$
+- the sum of all probabilities add up to 1: $\sum_xP(X =x) = 1$
 
 For example, for the experiment of throwing a dice, $X$ can be the random variable for the result, and the probability of the dice landing in 1 can be written as:
 
