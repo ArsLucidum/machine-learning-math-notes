@@ -253,4 +253,6 @@ y_k
 \end{bmatrix} - 
 H^{-1}(x_k, y_k) \nabla f(x_k, y_k)
 $$
+
+
 (The order of multiplication is not interchangeable due to its dimension)
