@@ -243,7 +243,14 @@ In this case, to know if a matrix is concave, we look at the eigenvalues:
 For multivariable functions, Newton's method substitute the first derivative for the gradient and the second for the hessian:
 
 $$
-\begin{bmatrix} x_{k+1} \\ y_{k+1} \end{bmatrix} = \begin{bmatrix} x_k \\ y_k \end{bmatrix} - H^{-1}(x_k, y_k) \nabla f(x_k, y_k)
+\begin{bmatrix} 
+x_{k+1} \\ 
+y_{k+1} 
+\end{bmatrix} = 
+\begin{bmatrix} 
+x_k \\ 
+y_k 
+\end{bmatrix} - 
+H^{-1}(x_k, y_k) \nabla f(x_k, y_k)
 $$
-
 (The order of multiplication is not interchangeable due to its dimension)
