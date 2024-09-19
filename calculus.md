@@ -225,8 +225,8 @@ In multivariable calculus, just like a first derivative becomes the $\nabla f$ g
 
 $$
 H(x,y) = \begin{bmatrix}
-f_{xx}(xy) && f_{xy}(x,y) \\
-f_{yx}(xy) && f_{yy}(x,y) \\
+f_{xx}(x,y) && f_{xy}(x,y) \\
+f_{yx}(x,y) && f_{yy}(x,y) \\
 \end{bmatrix}
 $$
 
