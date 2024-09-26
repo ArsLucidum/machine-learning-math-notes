@@ -147,7 +147,7 @@ The requirements for a probability density function (PDF) $f_X(x)$ are straightf
 
 - it is defined for all numbers
 - all values should be positive 
-- the total area under f_X(x) must equal 1
+- the total area under $f_X(x)$ must equal 1
 
 To calculate the probability of falling in a certain range we calculate the area in that range.
 
@@ -163,4 +163,4 @@ The function starts at 0 and ends at 1 (or limits there, if the domain includes 
 
 The normal distribution is bell-shaped. it is centered around the mean ($\mu$) and with a spread equal to the standard deviation ($\sigma$).
 
-When $\mu$ is - and $\sigma$ is 1, the distribution is called the standard normal distribution.
+When $\mu$ is 0 and $\sigma$ is 1, the distribution is called the standard normal distribution.
