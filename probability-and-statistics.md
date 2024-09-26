@@ -97,12 +97,12 @@ Random variables have associated probability distributions, that describe how pr
 
 In the case of discrete random variables, the probability distribution can be described using the probability mass function. It is a function that provides the probability of each possible discrete value of the variable.
 
-the PMF is denoted as ${P(X = x)}$.
+the PMF is denoted as ${p(X = x)}$.
 
 It has to validate two properties:
 
-- all probabilities are 0 or larger: $P(X=x) \geq 0 \text{ for all } x$
-- the sum of all probabilities add up to 1: $\sum_xP(X =x) = 1$
+- all probabilities are 0 or larger: $p(X=x) \geq 0 \text{ for all } x$
+- the sum of all probabilities add up to 1: $\sum_xp(X =x) = 1$
 
 For example, for the experiment of throwing a dice, $X$ can be the random variable for the result, and the probability of the dice landing in 1 can be written as:
 
@@ -112,3 +112,55 @@ $$P(X = 1) = \frac{1}{6}$$
 The whole mass function is described as:
 
 $$P(X =x) = \frac{1}{6} \text{ for } x \in \{1,2,3,4,5,6\}$$
+
+#### Binomial distribution
+
+If we consider how many ways there are to order a set of numbers, the result follows $k!$, where k is the number of elements in the set. For example, for 5 elements there are $5!$ possible combinations.
+
+ When we want to pick $k$ numbers from a set (of size $n$), then we make a choice with $n$ options following by one with $n-1$ options, all the way to the last one which will have $n-(k-1)$ options. The total possible choices are then:
+
+$$
+\frac{n!}{(n-k)!}
+$$
+
+however, choices that are the same in different order are double counted. We need to divide by $k!$ to account for that. Thus we have the binomial coefficient formula:
+
+$$
+{n\choose k} = \frac{n!}{k! (n-k)!}
+$$
+
+which is read 'n choose k' - binomial coefficients.
+
+The binomial distribution makes use of binomial coefficients, accounting for the possibility of each success:
+
+$$
+P(X = k) = {n \choose k} p^k(1-p)^{n-k}
+$$
+
+where $p^k$ is the probability of getting $k$ successes  and $(1-p)^{n-k}$ is the probability of getting $n-k$ failures.
+
+### Continuous distributions
+
+when dealing with continous values, we can't ask for the probability of one specific value (for example a point in time) since the chance will be 0 (too many values). Therefore, we consider a probability function, whose area must total 1 - just like the sum of probabilities of all possible discrete events added to one with discrete distributions.
+
+The requirements for a probability density function (PDF) $f_X(x)$ are straightforward:
+
+- it is defined for all numbers
+- all values should be positive 
+- the total area under f_X(x) must equal 1
+
+To calculate the probability of falling in a certain range we calculate the area in that range.
+
+### Cumulative distribution function
+
+Since calculating areas is not always convenient, the cumulative distribution is an alternative.
+
+It uses the concept of cumulative probability: the probability that an event happened before a reference point.
+
+The function starts at 0 and ends at 1 (or limits there, if the domain includes stretches to the infinite). It is denoted by $F_X(x)$ (uppercase F)
+
+### Normal distribution (aka Gaussian)
+
+The normal distribution is bell-shaped. it is centered around the mean ($\mu$) and with a spread equal to the standard deviation ($\sigma$).
+
+When $\mu$ is - and $\sigma$ is 1, the distribution is called the standard normal distribution.
