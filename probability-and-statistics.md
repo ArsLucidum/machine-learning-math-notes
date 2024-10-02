@@ -256,3 +256,24 @@ Which, using basic algebra and the fact that the $\mathbb{E}$ operator is linear
 - Since The variance involves squaring the deviations, when we multiply our original variable by a scalar the deviation will be affected by the square of the scalar 
   
 - The +b term does not affect the variance because it only changes the point the distribution is centered around, moving the points but not changing how spread apart they are.
+
+### Standard deviation
+
+The standard deviation is simply the square root of the variance. This is done so the variable, expectation and deviation are all in the same units.
+
+$$
+Std(X) = \sqrt{Var(X)}
+$$
+
+### Sum of Normal distributions
+
+Given a linear combination of variables X and Y:
+
+$$
+W = aX + bY
+$$
+
+assuming that both X and Y are normal distributions, the resulting variable follows a normal distribution as well. 
+
+- Its **mean** will be $a\mu_x + b\mu_y$
+- Its **variance** will be $a^2\sigma_x^2+b^2\sigma_y^2$ 
