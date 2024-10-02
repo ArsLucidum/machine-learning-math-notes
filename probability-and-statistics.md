@@ -164,3 +164,95 @@ The function starts at 0 and ends at 1 (or limits there, if the domain includes 
 The normal distribution is bell-shaped. it is centered around the mean ($\mu$) and with a spread equal to the standard deviation ($\sigma$).
 
 When $\mu$ is 0 and $\sigma$ is 1, the distribution is called the standard normal distribution.
+
+## Mean, median and mode
+
+### Mean 
+
+Also known as average. 
+
+It is the sum of all numbers in a data set divided by the total number of values. For the set $\{2, 3, 4, 6, 8, 10\}:
+
+$$
+\bar{x} = \frac{2+4+6+8+10}{5} = 6
+$$
+
+It represents the balance point of the distribution. It is influenced by extreme values.
+
+### Median 
+
+It is the middle value when the data set is ascending in ascending order. 
+
+- For the set $\{3,5,6\}$ it would be 5.
+
+- For sets with an even number of values, we average the central values: for $\{3,5,6, 7\}$ it would be $\frac{5+6}{7}$
+
+It provides a better representation of the typical value of a dataset, less influenced by extremes.
+
+### Mode 
+
+It is the number that appears most frequently in a dataset. 
+
+For the set $\{3,5,6,6\}$, it is 6.
+
+A data set could have more than one mode (multimodal), or even not have one if all values occur with equal frequency.
+
+## Expected value
+
+Given a random variable X, the expected value is written as $\mathbb{E}(X)$. It is defined for both discrete and continuous values:
+
+- **Discrete version**:
+
+For a discrete random variable $X$ with possible values $( x_1, x_2, \dots, x_n )$ and probabilities $( p_1, p_2, \dots, p_n )$ , the expected value is:
+
+$$
+\mathbb{E}[X] = \sum_{i=1}^{n} x_i p_i
+$$
+
+- **Continuous version**:
+
+For a continuous random variable $X$ with probability density function $f(x)$, the expected value is:
+
+$$
+\mathbb{E}[X] = \int_{-\infty}^{\infty} x f(x) \, dx
+$$
+
+The expected value gives a sense of what you can expect, on average, from a random variable. For example, if you roll a fair 6-sided die, the expected value of the outcome is 3.5, even if 3.5 is not an actual possible outcome.
+
+
+One property for the expected value is that the sum of expectations for a sest of values is equal to the expected value of the sum, that is:
+
+$\mathbb{E} [X_1 + X_2 + \dots + X_n ] = \mathbb{E}[X_1] + \mathbb{E}[X_2] + \dots + \mathbb{E}[X_n]$
+
+
+### Variance
+
+Given two distributions with equal expected value, one of them can be narrower and the other wide. Variance is a property that can capture that information.
+
+A naive aproach would be to use 'deviation from the expected value' as a measure. However, it doesn't work well - wether the distribution has small deviations (+1, -1) or big (+1000, -1000), if they're roughly balanced, they'll cancel each other out when adding them up, thus hiding interesting information.
+
+ Adding up the absolute values could be a better option, but it introduces messy mathematical properties that aren't desirable. To work around that, we usually square the deviations. 
+
+ This gives us the variance formula:
+
+ $$
+ Var(X) = \mathbb{E}[(X-\mathbb{E}[X])^2]
+ $$
+
+Which, using basic algebra and the fact that the $\mathbb{E}$ operator is linear, can also be written as:
+
+ $$
+ Var(X) = \mathbb{E}[X^2]- \mathbb{E}[X]^2
+ $$
+
+ One interesting property is that 
+
+ $$
+ Var(aX+b) = a^2Var(X)
+ $$
+
+ This can be understood intuitively: 
+
+- Since The variance involves squaring the deviations, when we multiply our original variable by a scalar the deviation will be affected by the square of the scalar 
+  
+- The +b term does not affect the variance because it only changes the point the distribution is centered around, moving the points but not changing how spread apart they are.
