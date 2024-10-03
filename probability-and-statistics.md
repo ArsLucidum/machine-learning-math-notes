@@ -111,7 +111,7 @@ $$P(X = 1) = \frac{1}{6}$$
 
 The whole mass function is described as:
 
-$$P(X =x) = \frac{1}{6} \text{ for } x \in \{1,2,3,4,5,6\}$$
+$$P(X =x) = \frac{1}{6} \text{ for } x \in \lbrace1,2,3,4,5,6\rbrace$$
 
 #### Binomial distribution
 
@@ -171,7 +171,7 @@ When $\mu$ is 0 and $\sigma$ is 1, the distribution is called the standard norma
 
 Also known as average. 
 
-It is the sum of all numbers in a data set divided by the total number of values. For the set $\{2, 3, 4, 6, 8, 10\}:
+It is the sum of all numbers in a data set divided by the total number of values. For the set $\lbrace 2, 3, 4, 6, 8, 10\rbrace$:
 
 $$
 \bar{x} = \frac{2+4+6+8+10}{5} = 6
@@ -183,9 +183,9 @@ It represents the balance point of the distribution. It is influenced by extreme
 
 It is the middle value when the data set is ascending in ascending order. 
 
-- For the set $\{3,5,6\}$ it would be 5.
+- For the set $\lbrace3,5,6\rbrace$ it would be 5.
 
-- For sets with an even number of values, we average the central values: for $\{3,5,6, 7\}$ it would be $\frac{5+6}{7}$
+- For sets with an even number of values, we average the central values: for $\lbrace3,5,6, 7\rbrace$ it would be $\frac{5+6}{7}$
 
 It provides a better representation of the typical value of a dataset, less influenced by extremes.
 
@@ -193,7 +193,7 @@ It provides a better representation of the typical value of a dataset, less infl
 
 It is the number that appears most frequently in a dataset. 
 
-For the set $\{3,5,6,6\}$, it is 6.
+For the set $\lbrace3,5,6,6\rbrace$, it is 6.
 
 A data set could have more than one mode (multimodal), or even not have one if all values occur with equal frequency.
 
@@ -283,9 +283,11 @@ assuming that both X and Y are normal distributions, the resulting variable foll
 When we have a distribution that's not centered around 0, we can always do $X - \mu$ to center it.  This is common practice, because it makes distribution easier to interpret and simplifies certain mathematical operations.
 
 One of the advantages is that 
+
 $$
 E[X-\mu] = E[X] - E[\mu] = E[X] - \mu = 0
 $$
+
 (since $E[X]$ and $\mu$ are equal by definition)
 
 In the same vein, since the standard deviation ($\sigma$) measures spread, we can benefit from having a standard deviation of 1, which we can get by doing $\frac{X}{\sigma}$.
