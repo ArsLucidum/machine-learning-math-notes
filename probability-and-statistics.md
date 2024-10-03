@@ -235,23 +235,23 @@ A naive aproach would be to use 'deviation from the expected value' as a measure
 
  This gives us the variance formula:
 
- $$
- Var(X) = \mathbb{E}[(X-\mathbb{E}[X])^2]
- $$
+$$
+Var(X) = \mathbb{E}[(X-\mathbb{E}[X])^2]
+$$
 
 Which, using basic algebra and the fact that the $\mathbb{E}$ operator is linear, can also be written as:
 
- $$
- Var(X) = \mathbb{E}[X^2]- \mathbb{E}[X]^2
- $$
+$$
+Var(X) = \mathbb{E}[X^2]- \mathbb{E}[X]^2
+$$
 
- One interesting property is that 
+One interesting property is that 
 
- $$
- Var(aX+b) = a^2Var(X)
- $$
+$$
+Var(aX+b) = a^2Var(X)
+$$
 
- This can be understood intuitively: 
+This can be understood intuitively: 
 
 - Since The variance involves squaring the deviations, when we multiply our original variable by a scalar the deviation will be affected by the square of the scalar 
   
@@ -277,3 +277,39 @@ assuming that both X and Y are normal distributions, the resulting variable foll
 
 - Its **mean** will be $a\mu_x + b\mu_y$
 - Its **variance** will be $a^2\sigma_x^2+b^2\sigma_y^2$ 
+
+### Standardizing a distribution
+
+When we have a distribution that's not centered around 0, we can always do $X - \mu$ to center it.  This is common practice, because it makes distribution easier to interpret and simplifies certain mathematical operations.
+
+One of the advantages is that 
+$$
+E[X-\mu] = E[X] - E[\mu] = E[X] - \mu = 0
+$$
+(since $E[X]$ and $\mu$ are equal by definition)
+
+In the same vein, since the standard deviation ($\sigma$) measures spread, we can benefit from having a standard deviation of 1, which we can get by doing $\frac{X}{\sigma}$.
+
+
+### Moments of a distribution
+
+The moments of a random variable distribution are averages of the powers of a variable. Each one gives certain information about the distribution.
+
+the general form is:
+
+- $\mu'_n = E[X^n]$ is the *raw moment*
+- $\mu_n = E[(X-\mu )^n]$ is the *central moment*
+
+The central moment is generally preferable, though lucklily it is equivalent to taking the raw moment from a standardised distribution.
+
+Each moment (numbered by their power) provides different information:
+
+
+- The **first moment** $\mu_1 = E[X]$ is just the previously seen **expected value** (the mean). 
+- The **second moment** $\mu_2 = E[X^2]$ is the **variance** (if for the central moment/standardized distribution, otherwise it's the **spread**)
+- The **third moment** $\mu_3 = E[X^3]$ is the **skewness**. it measures assymetry - if it's positive the right side is more spread out, if it's negative it's the left side.
+- The **fourth moment** $\mu_4 = E[X^4]$ is the **kurtosis**. it measures the 'tailedness' of the distribution - that is, the presence of outlier elements at extreme values (on either side) 
+
+
+## TODO joint, conditional and marginal distributions
+## TODO dataset covariance
